@@ -1,0 +1,9 @@
+1 ，启动docker的命令出现“error  to pull   ....”,是因为没有联网的问题，插上网线就可以了
+2 ，插上网线也不好用的原因可能是端口本身没有反应，比如是个摆设，用自己的电脑试一下即可
+3 ，如果自己的电脑好用，但百度的不行，可以进行网络设置，改为“自动”进行尝试
+
+
+
+今天得到了很多文件资料
+https://github.com/ApolloAuto/apollo/blob/r3.0.0/docs/specs/D-kit/Quick_Start_V01.md
+软件上，咱们可以从这篇文档开始，先把循迹走通 https://github.com/ApolloAuto/apollo/blob/r3.0.0/docs/specs/D-kit/readme.md

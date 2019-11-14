@@ -1,0 +1,33 @@
+上午配置GPS，指导工程师曹工
+在win10系统输入指令（需要一根232转USB线），打开给的COMCenter.exe 绿色版不用安装
+输入     $cmd,get,output*ff     ，看能否获得回复（我是通过断电重启之后才成功的），获得了USB的相关信息，见图3
+ 输入   $cmd,get,netpara*ff    ,获得网口信息  ，见图4
+     ---------------------至此基本完成了USB的输出和网口路由器部分的输出（百度给的文档是输入，他给的是输出查看）-----------------
+
+输入   
+$cmd,set,netipport,203,107,45,154,8002*ff
+
+$cmd,set,netuser,username:keyword*ff
+
+$cmd,set,mountpoint,RTCM32_GGB*ff
+这里是千寻账号的输入(感觉不买也行，就是误差大点)
+
+
+然后进行了保存  $cmd,save,config*ff
+
+此时再一次输入$cmd,get,netpara*ff ，得到图5（4-5两个有千寻部分的相同点，可能是我前几天输入过，但是最后的基站挂载点不同）
+
+
+完成上面部分后，输入$cmd,output,com0,gpfpd,1*ff，得到类似图6字样，并不断刷新，说明已经差分（最后0B说明信号良好，05说明信号不行）
+
+然后保存$cmd,save,config*ff  ，断电重启，上面的即被保存
+
+
+
+下面是杆臂和导航模式，由于是饭点，所以分成了两部分
+$cmd,set,leverarm,gnss,0,-0.05,0.59*ff      杆臂配置  三个数字是通过测量获得的
+$cmd,get,leverarm*ff                              获取杆臂信息，如图7
+$cmd,get,navmode*ff                            获取导航信息 图8
+  保存
+ $cmd,save,config*ff              ，断电重启，上面的即被保存
+
